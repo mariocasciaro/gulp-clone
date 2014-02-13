@@ -1,4 +1,4 @@
-# [gulp](https://github.com/wearefractal/gulp)-clone [![Build Status](https://secure.travis-ci.org/mariocasciaro/gulp-clone.png?branch=master)](https://travis-ci.org/mariocasciaro/gulp-clone) [![NPM version](https://badge.fury.io/js/gulp-clone.png)](http://badge.fury.io/js/gulp-clone)
+# [gulp](https://github.com/wearefractal/gulp)-clone [![Build Status](https://secure.travis-ci.org/mariocasciaro/gulp-clone.png?branch=master)](https://travis-ci.org/mariocasciaro/gulp-clone) [![NPM version](https://badge.fury.io/js/gulp-clone.png)](http://badge.fury.io/js/gulp-clone) [![Dependency Status](https://gemnasium.com/mariocasciaro/gulp-clone.png)](https://gemnasium.com/mariocasciaro/gulp-clone)
 
 > Duplicate files in memory.
 
