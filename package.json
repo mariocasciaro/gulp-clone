@@ -1,0 +1,37 @@
+{
+  "name": "gulp-clone",
+  "description": "Clone files in memory in a gulp stream",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mariocasciaro/gulp-clone",
+  "author": {
+    "name": "Mario Casciaro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mariocasciaro/gulp-clone"
+  },
+  "bugs": {
+    "url": "https://github.com/mariocasciaro/gulp-clone/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mariocasciaro/gulp-clone/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "gulp-util": "~2.2.14",
+    "through2": "~0.4.1"
+  },
+  "devDependencies": {
+    "chai": "~1.9.0",
+    "mocha": "~1.17.1"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/_mocha test.js --reporter spec"
+  },
+  "keywords": [
+    "gulpplugin",
+    "clone"
+  ]
+}
