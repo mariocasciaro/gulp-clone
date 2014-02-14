@@ -22,11 +22,11 @@ var clone = require('gulp-clone');
 var cloneSink = clone();
 
 gulp.task('default', function () {
-    gulp.src('assets/**/*.js')
-        .pipe(cloneSink)                //<- clone objects streaming through this point
-		    .pipe(concat("bundle.js"))
-        .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js
-        .pipe(gulp.dest('out/'));       //<- saves bundle.js + original files in one pass
+  gulp.src('assets/**/*.js')
+    .pipe(cloneSink)                //<- clone objects streaming through this point
+    .pipe(concat("bundle.js"))
+    .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js
+    .pipe(gulp.dest('out/'));       //<- saves bundle.js + original files in one pass
 });
 ```
 
