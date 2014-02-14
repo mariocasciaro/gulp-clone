@@ -24,12 +24,16 @@ var cloneSink = clone();
 gulp.task('default', function () {
     gulp.src('assets/**/*.js')
         .pipe(cloneSink)                //<- clone objects streaming through this point
-		.pipe(concat("bundle.js"))
+		    .pipe(concat("bundle.js"))
         .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js
-        .gulp.dest('out/');             //<- saves bundle.js + original files in one pass
+        .pipe(gulp.dest('out/'));       //<- saves bundle.js + original files in one pass
 });
 ```
 
 ## License
 
 [MIT](http://en.wikipedia.org/wiki/MIT_License) @ Mario Casciaro
+
+-----
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mariocasciaro/gulp-clone/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
