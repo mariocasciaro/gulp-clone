@@ -40,4 +40,28 @@ describe('gulp-clone', function() {
 
         sourceStream.end();
     });
+    it('should clone files in the stream, using the old behaviour', function(done) {
+        var sink   = clone.sink(),
+            buffer = [];
+
+        sink
+            .pipe(sink.tap())
+            .pipe(through.obj(function(f,e,cb) {
+                buffer.push(f);
+                cb(null, f);
+            }))
+            .on('finish', function() {
+                expect(buffer).to.have.length(2);
+                expect(buffer).to.have.deep.property('0.path', 'afile.js');
+                expect(buffer).to.have.deep.property('1.path', 'afile.js');
+                done();
+            });
+
+        sink.write(new gutil.File({
+            path: 'afile.js',
+            contents: new Buffer("")
+        }));
+
+        sink.end();
+    });
 });
