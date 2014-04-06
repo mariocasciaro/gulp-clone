@@ -10,7 +10,11 @@ Install with [npm](https://npmjs.org/package/gulp-clone).
 npm install --save-dev gulp-clone
 ```
 
-## Examples
+## Changelog
+* 1.0.0: **Breaking change** - There is a new operating mode, as explained in the 1st example. The old
+ operating mode is still available under the `clone.sink()` property.
+
+## Example
 
 gulp-clone is useful in all those situations where you perform a destructive operation on your files (as for example concat) and you want to keep your original files for further processing or saving.
 
@@ -31,10 +35,24 @@ gulp.task('default', function () {
 });
 ```
 
+##Example - Bypass mode
+
+```js
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var clone = require('gulp-clone');
+
+var cloneSink = clone.sink();
+
+gulp.task('default', function () {
+  gulp.src('assets/**/*.js')
+    .pipe(cloneSink)                //<- clone objects streaming through this point
+    .pipe(concat("bundle.js"))
+    .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js
+    .pipe(gulp.dest('out/'));       //<- saves bundle.js + original files in one pass
+});
+```
+
 ## License
 
 [MIT](http://en.wikipedia.org/wiki/MIT_License) @ Mario Casciaro
-
------
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mariocasciaro/gulp-clone/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
