@@ -1,7 +1,7 @@
 {
   "name": "gulp-clone",
   "description": "Clone files in memory in a gulp stream",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/mariocasciaro/gulp-clone",
   "author": {
     "name": "Mario Casciaro"
