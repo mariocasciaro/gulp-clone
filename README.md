@@ -12,21 +12,22 @@ npm install --save-dev gulp-clone
 
 ## Examples
 
-gulp-clone is useful in all those situations where you perform a destructive operation on your files (as for example concat) and you want to keep your original files for further processing or saving...everything in just one stream pass.
+gulp-clone is useful in all those situations where you perform a destructive operation on your files (as for example concat) and you want to keep your original files for further processing or saving.
 
 ```js
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var clone = require('gulp-clone');
-
-var cloneSink = clone();
+var es = require('event-stream');
 
 gulp.task('default', function () {
-  gulp.src('assets/**/*.js')
-    .pipe(cloneSink)                //<- clone objects streaming through this point
-    .pipe(concat("bundle.js"))
-    .pipe(cloneSink.tap())          //<- output cloned objects + bundle.js
-    .pipe(gulp.dest('out/'));       //<- saves bundle.js + original files in one pass
+    var scripts = gulp.src('assets/**/*.js');
+
+    var bundle = scripts.pipe(clone())
+      .pipe(concat('bundle.js'));
+
+    // Merge the streams together, then write them to the out folder
+    return es.merge(scripts, bundle).pipe(gulp.dest('out'));
 });
 ```
 
