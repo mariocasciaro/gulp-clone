@@ -9,7 +9,7 @@ var cloneStream = function() {
     });
 };
 
-var cloneSink = function() {
+var cloneSink = function(options) {
     var tapStream = through.obj();
 
     var stream = through.obj(function(file, enc, cb) {
@@ -25,7 +25,9 @@ var cloneSink = function() {
         tapStream.write(file.clone());
         cb(null, file);
     }, function (cb) {
-        tapStream.end();
+        if (options && options.endTapStream) {
+            tapStream.end();
+        }
         cb();
     });
 
