@@ -24,6 +24,9 @@ var cloneSink = function() {
 
         tapStream.write(file.clone());
         cb(null, file);
+    }, function (cb) {
+        tapStream.end();
+        cb();
     });
 
     stream.tap = function() {
