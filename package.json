@@ -20,12 +20,13 @@
     }
   ],
   "dependencies": {
-    "gulp-util": "~2.2.14",
-    "through2": "~0.4.1"
+    "plugin-error": "^0.1.2",
+    "through2": "^2.0.3"
   },
   "devDependencies": {
-    "chai": "~1.9.0",
-    "mocha": "~1.17.1"
+    "chai": "^1.9.0",
+    "mocha": "^1.17.1",
+    "vinyl": "^2.1.0"
   },
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha test.js --reporter spec"
