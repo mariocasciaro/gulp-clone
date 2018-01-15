@@ -1,7 +1,7 @@
 {
   "name": "gulp-clone",
   "description": "Clone files in memory in a gulp stream",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "homepage": "https://github.com/mariocasciaro/gulp-clone",
   "author": {
     "name": "Mario Casciaro"
@@ -20,13 +20,13 @@
     }
   ],
   "dependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^4.1.0",
     "plugin-error": "^0.1.2",
     "through2": "^2.0.3"
   },
   "devDependencies": {
-    "vinyl": "^2.1.0"
+    "vinyl": "^2.1.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
   },
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha test.js --reporter spec"
